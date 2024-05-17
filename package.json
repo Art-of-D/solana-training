@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "gen": "npx esrun generate-keypair.ts",
     "load": "npx esrun load-keypair.ts",
-    "check": "npx esrun check-balance.ts"
+    "check": "npx esrun check-balance.ts",
+    "sent": "npx esrun send-sol.ts"
   },
   "keywords": [],
   "author": "Artur Didur <didur.art@gmai.com>",
