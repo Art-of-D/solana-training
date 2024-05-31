@@ -5,17 +5,23 @@
   "main": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "gen": "npx esrun generate-keypair.ts",
-    "load": "npx esrun load-keypair.ts",
-    "check": "npx esrun check-balance.ts",
-    "sent": "npx esrun send-sol.ts"
+    "gen": "npx ts-node generate-keypair.ts",
+    "load": "npx ts-node load-keypair.ts",
+    "check": "npx ts-node check-balance.ts",
+    "sent": "npx ts-node send-sol.ts",
+    "mine": "npx ts-node create-token-mint.ts",
+    "create": "npx ts-node create-token-account.ts",
+    "mint": "npx ts-node mint-tokens.ts"
   },
   "keywords": [],
   "author": "Artur Didur <didur.art@gmai.com>",
   "license": "ISC",
   "dependencies": {
     "@solana-developers/helpers": "^2.3.0",
+    "@solana/spl-token": "^0.4.6",
     "@solana/web3.js": "^1.91.8",
-    "esrun": "^3.2.26"
+    "dotenv": "^16.4.5",
+    "i": "^0.3.7",
+    "npm": "^10.8.1"
   }
 }

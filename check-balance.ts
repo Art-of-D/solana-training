@@ -10,21 +10,27 @@ import {
   airdropIfRequired,
 } from "@solana-developers/helpers";
 
-const keypair = getKeypairFromEnvironment("SECRET_KEY");
+async function main() {
+  const keypair = getKeypairFromEnvironment("SECRET_KEY");
 
-const connection = new Connection(clusterApiUrl("devnet"));
+  const connection = new Connection(clusterApiUrl("devnet"));
 
-console.log(`⚡️ Connected to devnet`);
+  console.log(`⚡️ Connected to devnet`);
 
-const publicKey = new PublicKey(keypair.publicKey);
+  const publicKey = new PublicKey(keypair.publicKey);
 
-const balanceInSOL = await airdropIfRequired(
-  connection,
-  publicKey,
-  1 * LAMPORTS_PER_SOL,
-  0.5 * LAMPORTS_PER_SOL
-);
+  const balanceInSOL = await airdropIfRequired(
+    connection,
+    publicKey,
+    1 * LAMPORTS_PER_SOL,
+    0.5 * LAMPORTS_PER_SOL
+  );
 
-console.log(
-  `💰 Finished! The balance for the wallet at address ${publicKey} is ${balanceInSOL}!`
-);
+  console.log(
+    `💰 Finished! The balance for the wallet at address ${publicKey} is ${balanceInSOL}!`
+  );
+}
+
+main().catch((error) => {
+  console.error(error);
+});

@@ -5,6 +5,9 @@
 2. To get public key - ~ npm run load
 3. Check your balance in devnet - ~ npm run check
 4. To send to other account - ~ npm run send
+5. Create toket - ~ npm run mine
+6. Create token account - ~ npm run create
+7. Make transaction - ~ npm run mint
 
 ## Requirements
 
